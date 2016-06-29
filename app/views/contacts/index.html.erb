@@ -1,0 +1,27 @@
+<h1>David's Contacts</h1>
+
+<%= render 'search' %><br><br>
+
+<button id='create-contact'> Create Contact </button>
+<br><br>
+<div id='form-new' class='hidden'>
+  <%= form_for Contact.new do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br>
+    <%= f.submit "Submit", id: 'new' %>
+  <% end %>
+</div>
+<br><br>
+<h1 style='text-align: center'> Contacts </h1>
+<div id='contacts'>
+  <% @contacts.reverse.each do |contact| %>
+    <div class='contact'>
+      <p> Name: <%= contact.name %> </p>
+      <p> Email: <%= contact.email %> </p>
+      <button class='delete' data-id=<%=contact.id%>> Delete </button>
+      <hr>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,10 @@
+<div>
+  <%= form_tag contacts_path do %>
+    <div class="row">
+    <%= text_field_tag :term, params[:term], placeholder: "Search For A Contact" %>
+    </div>
+    <br>
+    <%= submit_tag "Search", name: nil, id: 'search' %>
+  <% end %>
+  </div>
+</div>
